@@ -1,0 +1,43 @@
+{
+  "name": "insight-advisor-api",
+  "version": "1.0.0",
+  "author": {
+    "name": "Steven Pressland",
+    "email": "steven.pressland@qlik.com"
+  },
+  "keywords": [
+    "qlik",
+    "nebula"
+  ],
+  "scripts": {
+    "start": "parcel src/index.html --open",
+    "build": "parcel build src/index.html --dist-dir ./dist"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.3.0",
+    "@fortawesome/free-solid-svg-icons": "^6.3.0",
+    "@nebula.js/sn-bar-chart": "^0.8.24",
+    "@nebula.js/sn-boxplot": "^0.35.2",
+    "@nebula.js/sn-bullet-chart": "^1.21.2",
+    "@nebula.js/sn-combo-chart": "^1.21.1",
+    "@nebula.js/sn-distributionplot": "^0.37.2",
+    "@nebula.js/sn-funnel-chart": "^1.5.3",
+    "@nebula.js/sn-grid-chart": "^1.10.5",
+    "@nebula.js/sn-kpi": "^0.12.1",
+    "@nebula.js/sn-line-chart": "^1.21.11",
+    "@nebula.js/sn-mekko-chart": "^1.1.1",
+    "@nebula.js/sn-pie-chart": "^1.22.1",
+    "@nebula.js/sn-pivot-table": "^1.0.2",
+    "@nebula.js/sn-sankey-chart": "^1.6.5",
+    "@nebula.js/sn-scatter-plot": "^3.42.0",
+    "@nebula.js/sn-table": "^1.22.0",
+    "@nebula.js/sn-waterfall": "^0.33.2",
+    "@nebula.js/stardust": "3.1.2",
+    "@qlik/sdk": "^0.18.0",
+    "enigma.js": "^2.10.0",
+    "parcel": "^2.0.0-rc.0"
+  },
+  "devDependencies": {
+    "process": "^0.11.10"
+  }
+}

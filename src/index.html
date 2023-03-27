@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>Insight Advisor API Example App</title>
+
+    <style>
+      html {
+        height: 100%;
+        box-sizing: border-box;
+        margin: 0px;
+        overflow: hidden;
+        font-family: "Source Sans Pro", "Segoe UI", "Helvetica Neue", -apple-system, Arial, sans-serif;
+      }
+
+      body {
+        background: #eee;
+        height: 100%;
+        margin: 0px;
+        box-sizing: border-box;
+        overflow: hidden;
+      }
+
+      .page {
+        padding: 10px;
+        margin: 0 auto;
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 1000px;
+        height: 100%;
+        max-width: 1200px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+
+      .iacontent {
+        margin: 0 auto;
+        width: 100%;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        display: flex;
+        min-height: 0;
+      }
+
+      .form-control {
+        padding: 8px;
+        height: 40px;
+        box-sizing: border-box;
+        border: 0px;
+        font-size: 14px;
+        font-family: "Source Sans Pro", "Segoe UI", "Helvetica Neue", -apple-system, Arial, sans-serif;
+      }
+
+      .question {
+        flex: 1;
+        margin-right: 0px;
+        border-top-right-radius: 0px !important;
+        border-bottom-right-radius: 0px !important;
+      }
+
+      .contentcolumns {
+        display: flex;
+        flex: 1;
+        padding-top: 10px;
+        overflow: hidden;
+        min-height: 0;
+      }
+
+      .fieldlist {
+        flex: 20%;
+        background-color: white;
+        margin: 0px 10px 0px 0px;
+        overflow: scroll;
+        min-height: 0;
+        flex-grow: 1;
+      }
+
+      .content {
+        flex: 80%;
+        max-width: 800px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .toolbar {
+        margin: 0px;
+        height: 40px;
+      }
+
+      .row {
+        flex: 1;
+      }
+
+      .object {
+        position: relative;
+        box-sizing: border-box;
+        height: 100%;
+        
+      }
+      
+
+      .frame {
+        background-color: white;
+        border-radius: 5px;
+        overflow: hidden;
+        border: 1px solid #ddd;
+      }
+
+      .green {
+        background-color: #00873D;
+        color: white;
+        border: 0px;
+        border-top-left-radius: 0px !important;
+        border-bottom-left-radius: 0px !important;
+      }
+
+      .green:hover {
+        background-color: #0AAF54;
+      }
+
+      .white {
+        background-color: white;
+        color:black;
+        border: 1px solid #ddd;
+        flex-grow: 1;
+      }
+
+      .white:hover {
+        background-color: #eee;
+      }
+
+      .rowinput {
+        flex-grow: 5;
+        margin-right: 5px;
+      }
+
+      .settings {
+        margin-bottom: 10px;
+      }
+
+      .flexrow {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: stretch;
+      }
+
+      .fieldlist .header {
+        font-weight: bold;
+        font-size: 14px;
+        padding: 8px;
+        background-color: #eee;
+      }
+
+      .fieldlist ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .fieldlist ul li {
+        border-bottom: 1px solid #ddd;
+        padding: 6px;
+      }
+
+      .fieldlist ul li label {
+        margin-left: 5px;
+        margin-right: 5px;
+        font-size: 14px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="settings">
+        <div class="flexrow">
+          <input type="text" class="form-control frame rowinput" id="tenant" placeholder="Tenant URL">
+          <input type="password" class="form-control frame rowinput" id="clientid" placeholder="OAuth Client ID">
+          <input type="text" class="form-control frame rowinput" id="appid" placeholder="App ID">
+          <button type="submit" class="form-control frame white" id="connectToTenant">Connect to Tenant</button>
+        </div>
+      </div>
+      <div class="iacontent">
+          <input type="text" class="form-control question frame" id="inputText" placeholder="Type Question Here">
+        <div class="ask">
+          <button type="submit" class="form-control frame green" id="requestInsight">Ask Insight Advisor</button>
+        </div>
+      </div>
+      <div class="contentcolumns">
+        <div class="fieldlist frame">
+          <div class="analysis">
+            <select class="form-control" id="selectAnalysis">
+              <option value="">Select Analysis</option>
+            </select>
+          </div>
+          <div class="header">Master Measures</div>
+          <ul id="mm">
+          </ul>
+          <div class="header">Field Measures</div>
+          <ul id="fm">
+          </ul>
+          <div class="header">Master Dimensions</div>
+          <ul id="md">
+          </ul>
+          <div class="header">Field Dimensions</div>
+          <ul id="fd">
+          </ul>
+        </div>
+        <div class="content frame">
+            <div class="toolbar"></div>
+          <div class="row">
+            <div class="object" id="chart">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+    <script src="./index.js" type="module"></script>
+  </body>
+</html>
