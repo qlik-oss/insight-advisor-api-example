@@ -6,6 +6,8 @@ A tutorial is available which shows a basic example. This more comprehensive exa
 
 https://qlik.dev/embed/make-analytics-conversational/build-insight-advisor-web-app
 
+This code was written by Steven Pressland (steven.pressland@qlik.com)
+
 To get to the content of this repo do the following:
 
 ## Install Packages
